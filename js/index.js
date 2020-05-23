@@ -81,6 +81,45 @@ function renderButtons() {
 
 function renderPrice() {
   // Iteration 4: change the HTML of `<aside class="panel price">`
+  let price = basePrice;
+
+  const listElements = document.querySelectorAll('.panel.price li') 
+  
+  if (state.pepperoni) {
+    listElements[0].style.visibity = 'visible'
+    price += ingredients.pepperoni.price
+  } else {
+    listElements[0].style.visibity = 'hidden'
+  }
+
+  if (state.mushrooms) {
+    listElements[1].style.visibity = 'visible'
+    price += ingredients.mushrooms.price
+  } else {
+    listElements[1].style.visibity = 'hidden'
+  }
+
+  if (state.greenPeppers) {
+    listElements[2].style.visibity = 'visible'
+    price += ingredients.greenPeppers.price
+  } else {
+    listElements[2].style.visibity = 'hidden'
+  }
+
+  if (state.whiteSauce) {
+    listElements[3].style.visibity = 'visible'
+    price += ingredients.whiteSauce.price
+  } else {
+    listElements[3].style.visibity = 'hidden'
+  }
+
+  if (state.glutenFreeCrust) {
+    listElements[4].style.visibity = 'visible'
+    price += ingredients.glutenFreeCrust.price
+  } else {
+    listElements[4].style.visibity = 'hidden'
+  }
+
 }
 
 renderEverything();
