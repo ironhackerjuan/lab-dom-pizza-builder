@@ -53,26 +53,30 @@ function toggleIngredient(className, stateName) {
 
 function renderWhiteSauce() {
   // Iteration 2: add/remove the class "sauce-white" of `<section class="sauce">`
-  toggleExtra('sauce', 'sauce-white', 'whiteSauce')
+  toggleClassnameByState('sauce', 'sauce-white', 'whiteSauce')
 }
 
-function toggleExtra(className, extraClassname, stateName) {
+function toggleClassnameByState(className, toggleClass, stateName) {
   const extra = document.querySelector(`.${className}`)
 
   if (state[stateName]) {
-    extra.classList.add(extraClassname)
+    extra.classList.add(toggleClass)
   } else {
-    extra.classList.remove(extraClassname)
+    extra.classList.remove(toggleClass)
   }
 }
 
 function renderGlutenFreeCrust() {
   // Iteration 2: add/remove the class "crust-gluten-free" of `<section class="crust">`
-  toggleExtra('crust', 'crust-gluten-free', 'glutenFreeCrust')
+  toggleClassnameByState('crust', 'crust-gluten-free', 'glutenFreeCrust')
 }
 
 function renderButtons() {
-  // Iteration 3: add/remove the class "active" of each `<button class="btn">`
+  toggleClassnameByState('btn-pepperoni','active','pepperoni')
+  toggleClassnameByState('btn-mushrooms','active','mushrooms')
+  toggleClassnameByState('btn-green-peppers','active','greenPeppers')
+  toggleClassnameByState('btn-sauce','active','whiteSauce')
+  toggleClassnameByState('btn-crust','active','glutenFreeCrust')
 }
 
 function renderPrice() {
