@@ -53,6 +53,13 @@ function toggleIngredient(className, stateName) {
 
 function renderWhiteSauce() {
   // Iteration 2: add/remove the class "sauce-white" of `<section class="sauce">`
+  const sauce =  document.querySelector('.sauce')
+
+  if (state.whiteSauce) {
+    sauce.classList.add('sauce-white')
+  } else {
+    sauce.classList.remove('sauce-white')
+  }
 }
 
 function renderGlutenFreeCrust() {
