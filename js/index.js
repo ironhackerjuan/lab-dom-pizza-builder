@@ -33,23 +33,22 @@ function renderEverything() {
 }
 
 function renderPepperoni() {
-  document.querySelectorAll('.pep').forEach(onePep => {
-    if (state.pepperoni) {
-      onePep.style.visibility = 'visible';
-    } else {
-      onePep.style.visibility = 'hidden';
-    }
-  });
+  toggleIngredient('pep', 'pepperoni')
 }
 
 function renderMushrooms() {
-  document.querySelectorAll('.mushroom').forEach(oneMush => {
-    oneMush.style.visibility = state.mushrooms ? 'visible' : 'hidden'
-  })
+  toggleIngredient('mushroom', 'mushrooms')
 }
 
 function renderGreenPeppers() {
   // Iteration 1: set the visibility of `<section class="green-pepper">`
+  toggleIngredient('green-pepper', 'greenPeppers')
+}
+
+function toggleIngredient(className, stateName) {
+  document.querySelectorAll(`.${className}`).forEach(element => {
+    element.style.visibility = state[stateName] ? 'visible' : 'hidden'
+  })
 }
 
 function renderWhiteSauce() {
